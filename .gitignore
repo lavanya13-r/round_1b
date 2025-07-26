@@ -1,0 +1,12 @@
+# Ignore PDF files
+Collection*/PDFs/
+
+# Ignore generated output
+Collection*/challenge1b_output.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Docker artifacts
+*.tar
