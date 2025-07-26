@@ -1,6 +1,4 @@
 
-
-```markdown
 # 📘 Persona-Driven PDF Document Analyzer
 
 A solution for **Adobe Hackathon Round 1B: Persona-Driven Document Intelligence**.  
@@ -34,6 +32,8 @@ Challenge_1b/
 └── README.md
 
 ---
+
+```markdown
 
 ## 🧠 Input JSON
 
