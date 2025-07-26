@@ -1,3 +1,6 @@
+
+
+```markdown
 # 📘 Persona-Driven PDF Document Analyzer
 
 A solution for **Adobe Hackathon Round 1B: Persona-Driven Document Intelligence**.  
@@ -7,11 +10,12 @@ This tool analyzes PDF collections and extracts relevant sections based on a **p
 
 ## 🚀 Features
 
-- 📂 Multi-collection support
-- 🧠 Persona-aware keyword matching
-- 🏷️ Importance-ranked section extraction
-- 📦 Dockerized workflow
-- 📊 Structured JSON output
+- 📂 Multi-collection support  
+- 🧠 Persona-aware keyword matching  
+- 🏷️ Importance-ranked section extraction  
+- 📦 Dockerized workflow  
+- 📊 Structured JSON output  
+
 
 ---
 
@@ -19,17 +23,15 @@ This tool analyzes PDF collections and extracts relevant sections based on a **p
 
 Challenge_1b/
 ├── Collection1/
-│ ├── PDFs/
-│ ├── challenge1b_input.json
-│ └── challenge1b_output.json
+│   ├── PDFs/
+│   ├── challenge1b_input.json
+│   └── challenge1b_output.json
 ├── Collection2/
 ├── Collection3/
 ├── main.py
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
-
-
 
 ---
 
@@ -41,8 +43,11 @@ Challenge_1b/
   "persona": { "role": "HR professional" },
   "job_to_be_done": { "task": "Create and manage fillable forms" }
 }
+```
 
-## 📤 output JSON
+## 📤 Output JSON
+
+```json
 {
   "metadata": {
     "persona": "...",
@@ -56,18 +61,22 @@ Challenge_1b/
     { "document": "...", "refined_text": "...", "page_number": 1 }
   ]
 }
+```
 
 ## 🐳 Run with Docker
 
+```bash
 docker build -t pdf-analyzer .
 docker run --rm -v "${PWD}:/app" pdf-analyzer
+```
+
 ## On Windows PowerShell:
 
+```bash
 docker run --rm -v ${PWD}:/app pdf-analyzer
-
+```
 
 ## 👤 Personas & Tasks
-
 
 | Collection  | Persona         | Task                                     |
 | ----------- | --------------- | ---------------------------------------- |
@@ -75,14 +84,9 @@ docker run --rm -v ${PWD}:/app pdf-analyzer
 | Collection2 | HR Professional | Create/manage onboarding forms           |
 | Collection3 | Food Contractor | Prepare buffet menu for corporate dinner |
 
-
 ## 🛠️ Tech Stack
 
-Python 3.10
-
-PyPDF2
-
-
-
-
-Docker
+- Python 3.10
+- PyPDF2
+- Docker
+```
