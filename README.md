@@ -1,41 +1,88 @@
-# Adobe India Hackathon 2025
+# 📘 Persona-Driven PDF Document Analyzer
 
-## Welcome to the "Connecting the Dots" Challenge
-
-### Rethink Reading. Rediscover Knowledge
-
-What if every time you opened a PDF, it didn't just sit there—it spoke to you, connected ideas, and narrated meaning across your entire library?
-
-That's the future we're building — and we want you to help shape it.
-
-In the Connecting the Dots Challenge, your mission is to reimagine the humble PDF as an intelligent, interactive experience—one that understands structure, surfaces insights, and responds to you like a trusted research companion.
-
-### The Journey Ahead
-
-**Round 1:**
-Kick things off by building the brains — extract structured outlines from raw PDFs with blazing speed and pinpoint accuracy. Then, power it up with on-device intelligence that understands sections and links related ideas together.
-
-**Round 2:**
-It's showtime! Build a beautiful, intuitive reading webapp using Adobe's PDF Embed API. You will be using your Round 1 work to design a futuristic webapp.
-
-### Why This Matters
-
-In a world flooded with documents, what wins is not more content — it's context. You're not just building tools — you're building the future of how we read, learn, and connect. No matter your background — ML hacker, UI builder, or insight whisperer — this is your stage.
-
-Are you in?
-
-It's time to read between the lines. Connect the dots. And build a PDF experience that feels like magic. Let's go.
+A solution for **Adobe Hackathon Round 1B: Persona-Driven Document Intelligence**.  
+This tool analyzes PDF collections and extracts relevant sections based on a **persona** and **job-to-be-done**.
 
 ---
 
-## Challenge Solutions
+## 🚀 Features
 
-### [Challenge 1a: PDF Processing Solution](./Challenge_1a/README.md)
-Basic PDF processing with Docker containerization and structured data extraction.
-
-### [Challenge 1b: Multi-Collection PDF Analysis](./Challenge_1b/README.md)
-Advanced persona-based content analysis across multiple document collections.
+- 📂 Multi-collection support
+- 🧠 Persona-aware keyword matching
+- 🏷️ Importance-ranked section extraction
+- 📦 Dockerized workflow
+- 📊 Structured JSON output
 
 ---
 
-**Note**: Each challenge directory contains detailed documentation and implementation details. Please refer to the individual README files for comprehensive information about each solution.
+## 🧱 Project Structure
+
+Challenge_1b/
+├── Collection1/
+│ ├── PDFs/
+│ ├── challenge1b_input.json
+│ └── challenge1b_output.json
+├── Collection2/
+├── Collection3/
+├── main.py
+├── Dockerfile
+├── requirements.txt
+└── README.md
+
+
+
+---
+
+## 🧠 Input JSON
+
+```json
+{
+  "documents": [{ "filename": "doc.pdf", "title": "Doc Title" }],
+  "persona": { "role": "HR professional" },
+  "job_to_be_done": { "task": "Create and manage fillable forms" }
+}
+
+## 📤 output JSON
+{
+  "metadata": {
+    "persona": "...",
+    "job_to_be_done": "...",
+    "processing_timestamp": "..."
+  },
+  "extracted_sections": [
+    { "document": "...", "section_title": "...", "importance_rank": 1, "page_number": 1 }
+  ],
+  "subsection_analysis": [
+    { "document": "...", "refined_text": "...", "page_number": 1 }
+  ]
+}
+
+## 🐳 Run with Docker
+
+docker build -t pdf-analyzer .
+docker run --rm -v "${PWD}:/app" pdf-analyzer
+## On Windows PowerShell:
+
+docker run --rm -v ${PWD}:/app pdf-analyzer
+
+
+## 👤 Personas & Tasks
+
+
+| Collection  | Persona         | Task                                     |
+| ----------- | --------------- | ---------------------------------------- |
+| Collection1 | Travel Planner  | Plan a 4-day trip                        |
+| Collection2 | HR Professional | Create/manage onboarding forms           |
+| Collection3 | Food Contractor | Prepare buffet menu for corporate dinner |
+
+
+## 🛠️ Tech Stack
+
+Python 3.10
+
+PyPDF2
+
+
+
+
+Docker
